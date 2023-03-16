@@ -1,12 +1,12 @@
 import Notiflix from 'notiflix';
-import axios from 'axios';
+import axios, { Axios } from 'axios';
 // import { fetchImg } from './fetchImg.js';
 
 const DEBOUNCE_DELAY = 300;
-const BASE_URL = 'https://pixabay.com/api/';
+const API_URL = 'https://pixabay.com/api/';
 const myKey = '34476830 - b52e87f2018fae84058c602d8';
-const myUrl =
-  'https://pixabay.com/api/?key=34476830 - b52e87f2018fae84058c602d8&q=yellow+flowers&image_type=photo';
+const myUrl = '${BASE_URL}?${myKey}q=yellow+flowers&image_type=photo';
+console.log(myUrl);
 const refs = {
   searching: document.querySelector('[name="searchQuery"]'),
   form: document.querySelector('.search-form'),
@@ -15,6 +15,15 @@ const refs = {
 console.log(refs.searching);
 console.log(refs.form);
 console.log(refs.gallery);
+axios.get(API_URL ? 34476830 - b52e87f2018fae84058c602d8 & q=cat & image_type=photo & orientation=horizontal & safesearch=true & page=$1 & per_page=20)
+async function getUser() {
+  try {
+    const response = await axios.get('/user?ID=12345');
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
 // refs.searching.addEventListener(
 //   'input',
 //   debounce(Event => {
