@@ -14,7 +14,7 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   loadMoreBtn: document.querySelector('.load-more'),
 };
-refs.form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
 let page = 1;
 let currentQuery = '';
 refs.loadMoreBtn.style.display = 'none';
@@ -92,10 +92,15 @@ async function handleSearch(event) {
 
     page++;
 
-    // Initialize SimpleLightbox after new images are added
+    // Ініціалізація SimpleLightbox після додавання нових картинок
     const lightbox = new SimpleLightbox('.gallery a', {});
   } catch (error) {
     console.error(error);
     Notiflix.Notify.failure('Something went wrong. Please try again later.');
   }
+}
+async function handleLoadMore() {
+  refs.loadMoreBtn.disabled = true;
+  await handleSearch(new Event('submit'));
+  refs.loadMoreBtn.disabled = false;
 }
