@@ -81,7 +81,7 @@ async function handleSearch(event) {
     refs.gallery.insertAdjacentHTML('beforeend', html);
 
     if (response.data.totalHits <= page * PER_PAGE) {
-      refs.loadMoreBtn.classList.add('is-hidden');
+      refs.loadMoreBtn.style.display = 'none';
       Notiflix.Notify.warning(
         "We're sorry, but you've reached the end of search results."
       );

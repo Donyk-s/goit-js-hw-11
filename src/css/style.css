@@ -124,6 +124,7 @@ input[type='search'] {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  margin-top: 15px;
 }
 .img {
   display: block;
